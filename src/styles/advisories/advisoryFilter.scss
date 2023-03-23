@@ -1,0 +1,21 @@
+@import "../variables.scss";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+.advisory-filter-container {
+  @include media-breakpoint-up(md) {
+    background: #f2f2f2;
+    padding: 1rem;
+    margin: 0;
+  }
+
+  .MuiInputBase-root {
+    background: $colorWhite;
+  }
+  // required for accessibility
+  .MuiInputBase-input:focus,
+  .MuiInputBase-input:focus-visible {
+    outline: unset !important;
+  }
+}

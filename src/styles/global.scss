@@ -1,0 +1,244 @@
+@import "variables.scss";
+
+.bc-bg-yellow {
+  background: $colorGold;
+}
+.bc-color-white {
+  color: $colorWhite;
+}
+.bc-color-blue-dk {
+  color: $colorBlue;
+}
+.bc-bg-blue-dk {
+  background: $colorBlue;
+}
+.bc-bg-blue-md {
+  background: $colorBlueMed;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  letter-spacing: normal;
+}
+
+head,
+script,
+style {
+  display: none !important;
+}
+
+.line {
+  background-color: $colorGold;
+  height: 2px;
+}
+
+#header {
+  width: 100%;
+  padding-top: 5px;
+  overflow: visible;
+  background-color: $colorBlue;
+  > .navbar {
+    z-index: 1300;
+  }
+}
+
+.navbar-nav {
+  flex-direction: unset !important;
+}
+
+#main {
+  box-sizing: border-box;
+  z-index: 2;
+  width: 100%;
+  padding: 0;
+  text-align: left;
+}
+
+#bc-parks-logo {
+  margin-bottom: 0.5rem !important;
+  a img {
+    max-height: 36px;
+    max-width: 121px;
+  }
+
+  @media screen and (min-width: $smBreakpoint) {
+    padding-left: 5vw;
+    a img {
+      max-height: unset;
+      max-width: unset;
+    }
+  }
+}
+
+/** Typography overrides **/
+
+// override BC Govt Bootstrap defaults
+h1, h2 {
+  color: $colorBlue;
+}
+
+/** Overrides CKEditor <p> wrapper element that has margin bottom */
+.no-mb {
+  margin-bottom: 0px !important;
+}
+
+blockquote {
+  color: $colorBlue;
+  font-size: 1.125rem;
+  border-left: solid 3px $colorGold;
+  margin: 64px 0 64px 64px;
+  padding-left: 24px;
+    :last-child {
+      margin-bottom: 0;
+    }
+    h3 {
+      font-size: 1.25rem;
+    }
+}
+
+.callout-box {
+  color: $colorBlue;
+  background-color: #D9EAF7;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 4px;
+  margin: 16px 0 32px;
+  padding: 20px;
+}
+
+figure.media div[data-oembed-url] {
+  width: 100%;
+}
+
+img { max-width: 100%; }
+
+// This is temp as we should be rendering <table class="table"> through CKEditor
+// so that tables pick up standard boostrap styles
+figure.table {
+  table {
+    width: 100%;
+    th {
+      background: $colorGreyLight;
+  }
+  }
+}
+
+ol li.lower-alpha {
+  list-style-type: lower-alpha;
+}
+
+/* end CKEeditor added styles */
+
+#home-header {
+  .nav-item:not(:last-child) {
+    border-bottom: 1px solid white;
+  }
+  .header-search-group {
+    background-color: #7a94a5;
+    border-top-left-radius: 50em !important;
+    border-bottom-left-radius: 50em !important;
+    > .form-control {
+      background-color: #7a94a5 !important;
+    }
+  }
+}
+
+#home-menu {
+  background-color: #255a8b;
+  > div {
+    padding-left: 6vw;
+  }
+  nav .nav-item {
+    color: $colorWhite;
+  }
+  .nav-item:not(:last-child) {
+    border-right: 1px solid $colorWhite;
+  }
+}
+
+img.alert-exclamation {
+  transform: scale(0.8);
+}
+
+.nav-menu-links .nav-item:not(:last-child) {
+  border-right: 1px solid $colorWhite;
+}
+
+.footing-hr {
+  height: 30px;
+}
+
+li.post-separator {
+  margin-top: -15px;
+}
+
+.footing-hr {
+  height: 1px;
+  background-color: rgba(252, 186, 25, 1);
+  width: 30px;
+  display: inline-block;
+}
+
+/* TODO are any of these alert styles used? */
+.alert-content,
+.alert {
+  margin-bottom: 0 !important;
+}
+
+.alert-content {
+  font-size: 0.875rem;
+}
+
+.alert-warning {
+  background-color: #ffdd8b !important;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Breadcrumbs */
+
+.bcp-breadcrumbs {
+  ol {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: flex;
+    list-style: none;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+  }
+
+  .bcp-breadcrumbs__separator {
+    color: $colorGold;
+    margin-left: 8px;
+    margin-right: 8px;
+    position: relative;
+
+    &::before {
+      content: "\f054";
+      display: inline-block;
+      font-family: "Font Awesome 5 Free";
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 900;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+    }
+  }
+}

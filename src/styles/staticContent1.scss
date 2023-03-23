@@ -1,0 +1,181 @@
+@import "variables.scss";
+
+.static-content-container.page-breadcrumbs {
+  padding-top: 15px;
+  padding-bottom: 0px;
+}
+
+.static-content-container {
+  max-width: 1140px;
+  padding: 20px 40px 35px 40px;
+  margin: 0px auto;
+
+  @media screen and (max-width: 415px) {
+    padding: 16px;
+  }
+
+  .card {
+    border-color: $colorBlueLight !important;
+    border-width: 1px !important;
+
+    .card-img-wrapper {
+      > img {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    .card-title {
+      color: $colorBlueLight;
+    }
+    .card-body {
+      padding: 0;
+    }
+    .card-body:hover {
+      background-color: $colorWhite !important;
+    }
+  }
+  a:hover {
+    color: $colorGold;
+  }
+}
+
+/* ---- HEADER ---- */
+
+.static-content--header {
+  display: flex;
+  flex-wrap: wrap;
+  @media (min-width: 576px) {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 40px 40px 10px 40px;
+  }
+
+  .header-image-wrapper {
+    height: 345px;
+    order: 1;
+    flex: 0 0 100%;
+    > img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    @media (min-width: 576px) {
+      height: 455px;
+      order: 2
+    }
+  }
+  .header-title {
+    margin: 16px;
+    order: 2;
+    @media (min-width: 576px) {
+      margin: 0 0 32px;
+      order: 1;
+    }
+  }
+}
+
+.page-header--caption {
+  color: #656565;
+  font-size: 0.9rem;
+  margin-bottom: 60px;
+}
+.page-content-wrapper {
+  .page-content {
+    position: relative;
+  }
+}
+
+/* Note most/all of the following is for backwards compat for older content */
+
+.MuiBreadcrumbs-separator {
+  color: $colorGold !important;
+}
+.content-zone {
+  padding: 40px 0 0 0;
+
+  .content-zone-intro {
+    .content-zone-header {
+      font-size: 1.5rem;
+      color: $colorText;
+      font-weight: bold;
+      margin-bottom: 0;
+      padding-bottom: 20px;
+    }
+  }
+  .hero-img-wrapper {
+    > img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+
+      @media screen and (min-width: 416px) and (max-width: 768px) {
+        height: 375px !important;
+      }
+      @media screen and (max-width: 415px) {
+        height: 250px !important;
+      }
+    }
+  }
+  .hero-credit {
+    @media screen and (max-width: 415px) {
+      font-size: 0.8rem !important;
+    }
+  }
+  .accordion-section {
+    h5 {
+      margin-bottom: 0;
+    }
+    .card-header {
+      background-color: $colorWhite;
+      border: 1px solid $colorBlueLight;
+    }
+    .card-body {
+      padding: 20px;
+      color: $colorBlueLight;
+    }
+    .collapse-toggle {
+      color: $colorBlueLight;
+      &:focus,
+      &:focus-visible {
+        outline: unset !important;
+      }
+    }
+    li {
+      display: list-item;
+      list-style: "- ";
+      margin-left: 10px;
+    }
+    .collapse-toggle[aria-expanded="true"] {
+      &.fa-chevron-down {
+        transform: rotate(180deg) !important;
+      }
+    }
+    .card:hover {
+      border: 1px solid $colorGold !important;
+      cursor: pointer;
+    }
+  }
+  .content-zone-header {
+    font-size: 1.5rem;
+    color: $colorBlueLight;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  .content-zone-hr {
+    > hr {
+      margin-top: 5px;
+      height: 1px;
+      background-color: $colorGold;
+      width: 75px;
+      display: inline-block;
+    }
+  }
+  .small-text {
+    font-size: 0.8rem;
+    @media screen and (max-width: 750px) {
+      margin-bottom: 40px !important;
+    }
+  }
+}

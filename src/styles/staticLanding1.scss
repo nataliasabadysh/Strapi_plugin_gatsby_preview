@@ -1,0 +1,163 @@
+@import "variables.scss";
+
+.bcp-landing-intro {
+  max-width: 1440px;
+  margin: 0 auto;
+
+  @media screen and (min-width: $mdBreakpoint) {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  h1 {
+    color: $colorBlue;
+    margin: 27px 0 13px;
+
+    @media screen and (min-width: $mdBreakpoint) {
+      margin-top: 40px;
+      margin-bottom: 93px;
+    }
+
+    @media screen and (min-width: $lgBreakpoint) {
+      margin-top: 60px;
+    }
+
+    @media screen and (min-width: $xlBreakpoint) {
+      margin-top: 107px;
+    }
+  }
+
+  &__image {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 400px;
+    @media screen and (min-width: $mdBreakpoint) {
+      height: auto;
+      margin-left: auto;
+      order: 2;
+      width: 720px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 23px;
+
+    @media screen and (min-width: $mdBreakpoint) {
+      order: 1;
+      max-width: 50%;
+      padding: 16px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      padding-right: 110px;
+      padding-left: 165px;
+    }
+  }
+}
+
+.bcp-landing-links {
+  background-color: $colorGreyLight;
+  padding-bottom: 60px;
+  padding-top: 30px;
+  width: 100%;
+
+  @media screen and (min-width: $mdBreakpoint) {
+    padding-bottom: 98px;
+    padding-top: 72px;
+  }
+
+  .content {
+    max-width: 1110px;
+  }
+
+  .col {
+    margin-bottom: 33px;
+    margin-top: 33px;
+  }
+}
+
+.bcp-landing-park-search {
+  background-color: $colorBlueMed;
+  width: 100%;
+
+  .container {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+}
+
+/* TODO: these styles are pretty clunky and repeated with home /search
+ * Search component should be bootstrap based and include styling.
+ */
+.parks-search-wrapper {
+  color: $colorWhite;
+}
+
+.parks-search-field {
+  margin-top: 15px;
+  display: flex;
+
+  input {
+    font-size: 0.85rem;
+  }
+  // required for accessibility
+  .MuiInputBase-input:focus,
+  .MuiInputBase-input:focus-visible {
+    outline: unset !important;
+  }
+}
+
+.parks-search-button {
+  background: $colorGold;
+  color: $colorBlue;
+  height: 50px;
+  margin-left: auto;
+  font-size: 1.1rem;
+  padding: 0 25px;
+}
+
+.parks-search-filter-link {
+  font-size: 0.9rem;
+  margin-top: 15px;
+  color: $colorWhite;
+}
+
+.parks-search-filter-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.park-search-text-box {
+  margin-right: 10px;
+  width: 100% !important;
+
+  .MuiOutlinedInput-root {
+    width: 100% !important;
+    max-width: 700px !important;
+    background-color: $colorWhite !important;
+    border: none !important;
+    border-radius: 5px !important;
+    font-size: $bodyFont !important;
+    font-family: $globalFont;
+  }
+
+  .MuiOutlinedInput-input {
+    padding: 10px 7px !important;
+  }
+
+  .MuiOutlinedInput-root:focus {
+    outline-offset: 1px !important;
+  }
+
+  .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border: 1px solid $colorBlue !important;
+  }
+}
+
+.park-filter-select [class*="-control"] {
+  border-radius: 50px !important;
+  background-color: $colorWhite !important;
+  font-family: $globalFont;
+  font-size: $bodyFont !important;
+}

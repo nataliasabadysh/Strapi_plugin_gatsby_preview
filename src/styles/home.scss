@@ -1,0 +1,364 @@
+@import "variables.scss";
+
+#main {
+  padding-bottom: 40px;
+  overflow-x: hidden; /* without this, there is a small right margin */
+}
+
+.home-page-search-bg {
+  .gatsby-image-wrapper {
+    display:block;
+    margin: 0 auto;
+  }
+}
+
+#home-alert {
+  color: $colorBlue;
+  a {
+    color: $colorBlue;
+  }
+}
+
+.home-advisories {
+
+  @media screen and (max-width: $lgBreakpoint) {
+    padding:20px;
+  }
+
+  .home-advisory-buttons {
+    margin-top: 20px;
+    display: flex;
+    
+    @media screen and (min-width: $lgBreakpoint) {
+      flex-grow: 0;
+      justify-content: center;
+      padding: 0 20px 0 20px;    
+    }
+    @media screen and (max-width: $lgBreakpoint) {
+      flex-grow: 1;
+
+      .home-advisory-button {
+        width:100%;
+        margin-bottom:5px;
+      }
+    }
+  }
+
+  .home-advisory-button {
+
+    .btn {
+      background-color: $colorBlue !important;
+      color: $colorWhite;
+      height: 50px;
+      line-height: 50px;
+      padding:0px;
+      text-align: center;
+      border:2px solid $colorBlue;
+    }
+  
+    .btn:hover {
+      background-color: $colorGold !important;
+      border:2px solid $colorGold;
+      text-decoration: none;
+    }
+
+    .fa {
+      color: $colorGold;
+      padding-left: 30px;
+      font-size: 1.25rem;
+    }
+    a:hover {
+      span { /* otherwise white on white */
+        color:$colorBlue !important;
+      }
+      &::after {
+        color:$colorBlue;
+      }
+    }
+    .btn::after {
+      content: "\f138";
+      display: inline-block;
+      font-family: "Font Awesome 5 Free";
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 900;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+
+      color: $colorGold;
+      padding-left: 30px;
+      font-size: 1.25rem;
+    }
+  }
+
+  .home-advisory-button.home-advisory-button--all {
+
+    .btn {
+      background-color: $colorWhite !important;
+      color: $colorBlue;
+    }
+
+    a.btn:hover {
+      background-color: $colorBlue !important;
+      text-decoration: none;      
+      span {
+        color: $colorWhite !important;
+      }
+    }
+
+    .btn::after {
+      display: none;
+    }
+  }
+
+  .advisory-content {
+    font-size: 1rem;
+    color: $colorWhite;
+    text-align: center;
+    border: 2px solid $colorBlue;
+    border-radius: 5px;
+  }
+
+  .advisory-button > p {
+    margin-bottom: 5px;
+  }
+
+  @media screen and (min-width: $lgBreakpoint) {
+    .advisory-button {
+      height: 55px;
+      margin-right: 18px;
+
+      
+    }
+    .all-advisory-button {
+      height: 55px;
+    }
+  }
+
+}
+
+#home-plan-your-trip {
+  color: $colorBlue;
+
+  margin-top: 50px;
+  padding-bottom: 40px;
+
+  @media screen and (min-width: $lgBreakpoint) {
+    padding-top: 30px;
+  }
+}
+
+#home-about-bc-parks {
+  color: $colorBlue;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+#home-news,
+#home-get-involved {
+  color: $colorBlue;
+  background-color: $colorGrey;
+
+  .fa-chevron-circle-right {
+    font-size: 1.5rem;
+  }
+
+  @media screen and (min-width: $lgBreakpoint) {
+    .fa-chevron-circle-right {
+      color: $colorBlue;
+    }
+    .full-horizontal-img > img {
+      max-height: 432px;
+    }
+    .right-chevron > img {
+      transform: scale(0.5);
+    }
+    .zone-hr, .card-text {
+      padding-top: 15px;
+    }
+  }
+}
+
+#home-carousel {
+  .carousel-indicators {
+    bottom: 10% !important;
+    justify-content: center;
+
+    > li, li.active {
+      width: 5px;
+      height: 5px;
+      border: 1px;
+      border-radius: 5px;
+      background-color: $colorWhite !important;
+      opacity: unset;
+    }
+    > li.active {
+      background-color: $colorGold !important;
+    }
+  }
+  .carousel-caption {
+    > p {
+      padding-bottom: 0px !important;
+      font-size: 0.5rem;
+    }
+  }
+
+  @media screen and (min-width: 801px) {
+    .carousel-item img {
+      height: auto;
+    }
+    .carousel-inner, .carousel-item {
+      max-height: 600px;
+    }
+    .carousel-indicators {
+      margin-right: 32px !important;
+      bottom: 75px;
+      justify-content: flex-end;
+      > li, li.active {
+        height: 15px !important;
+        width: 15px !important;
+        border: 1px;
+        border-radius: 15px;
+        background-color: $colorWhite !important;
+        opacity: unset;
+      }
+      > li.active {
+        background-color: $colorGold !important;
+      }
+    }
+    .carousel-caption {
+      right: 32px !important;
+      bottom: 32px !important;
+    }
+  }
+}
+
+.home-content-width-override {
+  max-width: 1100px !important;
+  margin:0px auto;
+  padding:0px 24px;
+
+  @media screen and (max-width: $lgBreakpoint) {
+    padding: 0px;
+  }
+}
+
+#carousel-down {
+  z-index: 1299;
+  
+  @media screen and (min-width: 801px) { 
+    position: absolute;
+    top: calc(100% - 7.5vh);
+    font-size: 2.25rem;
+  }
+}
+
+.split-card-body .zone-hr > hr {
+  margin: 20px 0px 10px 0;
+}
+
+#Zone2 {
+  background-color: rgba(238, 241, 245, 1);
+}
+#Zone4 {
+  background-color: rgba(238, 241, 245, 1);
+}
+#Zone5 {
+  background-color: rgba(238, 241, 245, 1);
+}
+
+.main {
+
+  padding-bottom: 40px;
+}
+
+.home-card-wrapper {
+  max-height: 320px;
+  margin-bottom: 30px;  
+  
+  @media screen and (min-width: $lgBreakpoint) {
+    max-height: 500px;
+  }
+}
+
+#home-news,#home-get-involved {
+  .card {
+    border: unset;
+  }
+}
+
+/* ------------- SEARCH ------------ */
+
+#home-parks-search {
+  position: absolute;
+  z-index: 2;
+
+
+
+  @media screen and (max-width: $lgBreakpoint) {
+    bottom: 30px;
+    left: 5%;
+    width: 90%;
+  }
+  @media screen and (min-width: $lgBreakpoint) {
+    top: 0px;
+    left: 0px;   
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;  
+  }
+  .parks-search-wrapper {
+
+    background: $colorBlue;
+    color: $colorWhite;  
+
+
+    @media screen and (max-width: $lgBreakpoint) {
+      padding:20px;
+      text-align:center;
+    }
+    @media screen and (min-width: $lgBreakpoint) {
+      text-align: left;      
+      padding: 25px 40px;
+      margin: 180px auto 0px auto;
+      width: 800px;
+      min-height: 200px;
+    }
+  }
+
+
+  .parks-search-field{
+    margin-top:15px;   
+    display:flex; 
+
+    @media screen and (max-width: $lgBreakpoint) {
+      flex-direction: column;
+      flex-grow:1;
+      .parks-search-button{
+        width:100%;
+        margin:10px 0px;
+      }
+    }
+
+    input {
+      font-size:1rem;
+    }
+  }
+  .parks-search-button{
+    background: $colorGold;
+    color: $colorBlue;
+    height: 50px;
+    margin-left: auto;
+    font-size:1.1rem;
+    padding:0px 25px;
+  }
+  .parks-search-filter-link{
+    font-size:0.9rem;
+    margin-top:15px;
+    color:$colorWhite;
+  }
+  .parks-search-filter-link:hover{
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
