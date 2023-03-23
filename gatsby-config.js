@@ -100,10 +100,21 @@ module.exports = {
               }
             }
           }
-        ],
+        ].map(el => ({
+          name: el,
+          api: {
+            qs: {
+              // todo: this for preview plugin
+              _publicationState: 'preview',
+            }
+          }
+        })
+      ),
         queryLimit: 1000,
       },
     },
+
+    
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-sharp`,
